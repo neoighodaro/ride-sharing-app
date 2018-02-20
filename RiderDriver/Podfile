@@ -1,0 +1,9 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'
+
+target 'RiderDriver' do
+  use_frameworks!
+  pod 'PusherSwift', '~> 5.1.1'
+  pod 'Alamofire', '~> 4.6.0'
+  pod 'GoogleMaps', '~> 2.6.0'
+end
