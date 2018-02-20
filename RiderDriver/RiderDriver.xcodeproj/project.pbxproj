@@ -10,6 +10,7 @@
 		5B83A8F070973D82BBB915C9 /* Pods_RiderDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6314D780545CA03309F2C306 /* Pods_RiderDriver.framework */; };
 		B5495BF4203B0B97001CF4A5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5495BF3203B0B97001CF4A5 /* MainViewController.swift */; };
 		B5495BF7203B222C001CF4A5 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5495BF6203B222C001CF4A5 /* Ride.swift */; };
+		B5495BFD203C76D9001CF4A5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5495BFC203C76D9001CF4A5 /* AppConstants.swift */; };
 		B5F698AB2033209D0046F715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F698AA2033209D0046F715 /* AppDelegate.swift */; };
 		B5F698B02033209D0046F715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F698AE2033209D0046F715 /* Main.storyboard */; };
 		B5F698B22033209D0046F715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F698B12033209D0046F715 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		68B02DE5F0B74C3B4783D1CD /* Pods-RiderDriver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderDriver.release.xcconfig"; path = "Pods/Target Support Files/Pods-RiderDriver/Pods-RiderDriver.release.xcconfig"; sourceTree = "<group>"; };
 		B5495BF3203B0B97001CF4A5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B5495BF6203B222C001CF4A5 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
+		B5495BFC203C76D9001CF4A5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		B5F698A72033209D0046F715 /* RiderDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F698AA2033209D0046F715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F698AF2033209D0046F715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F698AA2033209D0046F715 /* AppDelegate.swift */,
+				B5495BFC203C76D9001CF4A5 /* AppConstants.swift */,
 				B5495BF6203B222C001CF4A5 /* Ride.swift */,
 			);
 			path = Others;
@@ -260,6 +263,7 @@
 				B5495BF4203B0B97001CF4A5 /* MainViewController.swift in Sources */,
 				B5F698AB2033209D0046F715 /* AppDelegate.swift in Sources */,
 				B5495BF7203B222C001CF4A5 /* Ride.swift in Sources */,
+				B5495BFD203C76D9001CF4A5 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

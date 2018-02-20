@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class AppConstants {
+    static let GOOGLE_API_KEY = "AIzaSyBCcSVBYDADArHJFn1mVWeElNGDZ_06d8U"
+    static let URL = "http://127.0.0.1:4000"
+}

@@ -9,11 +9,6 @@
 import UIKit
 import GoogleMaps
 
-class AppConstants {
-    static let GOOGLE_API_KEY = "AIzaSyBCcSVBYDADArHJFn1mVWeElNGDZ_06d8U"
-    static let URL = "http://127.0.0.1:4000"
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
