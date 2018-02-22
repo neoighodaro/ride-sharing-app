@@ -11,11 +11,37 @@
 		B5495BF4203B0B97001CF4A5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5495BF3203B0B97001CF4A5 /* MainViewController.swift */; };
 		B5495BF7203B222C001CF4A5 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5495BF6203B222C001CF4A5 /* Ride.swift */; };
 		B5495BFD203C76D9001CF4A5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5495BFC203C76D9001CF4A5 /* AppConstants.swift */; };
+		B5B1B584203DA1E400082F47 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1B583203DA1E400082F47 /* NotificationService.swift */; };
+		B5B1B588203DA1E400082F47 /* DriverNotif.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B5B1B581203DA1E400082F47 /* DriverNotif.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B5F698AB2033209D0046F715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F698AA2033209D0046F715 /* AppDelegate.swift */; };
 		B5F698B02033209D0046F715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F698AE2033209D0046F715 /* Main.storyboard */; };
 		B5F698B22033209D0046F715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F698B12033209D0046F715 /* Assets.xcassets */; };
 		B5F698B52033209D0046F715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F698B32033209D0046F715 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5B1B586203DA1E400082F47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5F6989F2033209D0046F715 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5B1B580203DA1E400082F47;
+			remoteInfo = AdminNotif;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5B1B58C203DA1E400082F47 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B5B1B588203DA1E400082F47 /* DriverNotif.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6314D780545CA03309F2C306 /* Pods_RiderDriver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RiderDriver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,6 +49,10 @@
 		B5495BF3203B0B97001CF4A5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B5495BF6203B222C001CF4A5 /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		B5495BFC203C76D9001CF4A5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		B5495BFF203C7E31001CF4A5 /* RiderDriver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RiderDriver.entitlements; sourceTree = "<group>"; };
+		B5B1B581203DA1E400082F47 /* DriverNotif.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DriverNotif.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B1B583203DA1E400082F47 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B5B1B585203DA1E400082F47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5F698A72033209D0046F715 /* RiderDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F698AA2033209D0046F715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F698AF2033209D0046F715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B5B1B57E203DA1E400082F47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5F698A42033209D0046F715 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,10 +98,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B5B1B582203DA1E400082F47 /* DriverNotif */ = {
+			isa = PBXGroup;
+			children = (
+				B5B1B583203DA1E400082F47 /* NotificationService.swift */,
+				B5B1B585203DA1E400082F47 /* Info.plist */,
+			);
+			path = DriverNotif;
+			sourceTree = "<group>";
+		};
 		B5F6989E2033209D0046F715 = {
 			isa = PBXGroup;
 			children = (
 				B5F698A92033209D0046F715 /* RiderDriver */,
+				B5B1B582203DA1E400082F47 /* DriverNotif */,
 				B5F698A82033209D0046F715 /* Products */,
 				8670B43F22D862E6AFE3BA60 /* Pods */,
 				A58FCC3B35B1CD9E66CBD02A /* Frameworks */,
@@ -75,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F698A72033209D0046F715 /* RiderDriver.app */,
+				B5B1B581203DA1E400082F47 /* DriverNotif.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +130,7 @@
 		B5F698A92033209D0046F715 /* RiderDriver */ = {
 			isa = PBXGroup;
 			children = (
+				B5495BFF203C7E31001CF4A5 /* RiderDriver.entitlements */,
 				B5F698BC203323510046F715 /* Storyboards */,
 				B5F698BD2033235B0046F715 /* Others */,
 				B5F698BE203323660046F715 /* Controllers */,
@@ -129,6 +178,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B5B1B580203DA1E400082F47 /* DriverNotif */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5B1B58B203DA1E400082F47 /* Build configuration list for PBXNativeTarget "DriverNotif" */;
+			buildPhases = (
+				B5B1B57D203DA1E400082F47 /* Sources */,
+				B5B1B57E203DA1E400082F47 /* Frameworks */,
+				B5B1B57F203DA1E400082F47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DriverNotif;
+			productName = AdminNotif;
+			productReference = B5B1B581203DA1E400082F47 /* DriverNotif.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B5F698A62033209D0046F715 /* RiderDriver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5F698B92033209D0046F715 /* Build configuration list for PBXNativeTarget "RiderDriver" */;
@@ -139,10 +205,12 @@
 				B5F698A52033209D0046F715 /* Resources */,
 				302D926707FC54719EFD90E4 /* [CP] Embed Pods Frameworks */,
 				4716C31E018BD4D470892C25 /* [CP] Copy Pods Resources */,
+				B5B1B58C203DA1E400082F47 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B5B1B587203DA1E400082F47 /* PBXTargetDependency */,
 			);
 			name = RiderDriver;
 			productName = RiderAdmin;
@@ -159,9 +227,18 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "CreativityKills Co.";
 				TargetAttributes = {
+					B5B1B580203DA1E400082F47 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					B5F698A62033209D0046F715 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -179,11 +256,19 @@
 			projectRoot = "";
 			targets = (
 				B5F698A62033209D0046F715 /* RiderDriver */,
+				B5B1B580203DA1E400082F47 /* DriverNotif */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B5B1B57F203DA1E400082F47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5F698A52033209D0046F715 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,11 +290,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RiderDriver/Pods-RiderDriver-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PushNotifications/PushNotifications.framework",
 				"${BUILT_PRODUCTS_DIR}/PusherSwift/PusherSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PushNotifications.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PusherSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +343,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B5B1B57D203DA1E400082F47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5B1B584203DA1E400082F47 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5F698A32033209D0046F715 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +363,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5B1B587203DA1E400082F47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5B1B580203DA1E400082F47 /* DriverNotif */;
+			targetProxy = B5B1B586203DA1E400082F47 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B5F698AE2033209D0046F715 /* Main.storyboard */ = {
@@ -289,6 +392,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B5B1B589203DA1E400082F47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FMQ6R58UAV;
+				INFOPLIST_FILE = "$(SRCROOT)/DriverNotif/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.creativitykills.RiderAdmin.DriverNotif;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5B1B58A203DA1E400082F47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FMQ6R58UAV;
+				INFOPLIST_FILE = "$(SRCROOT)/DriverNotif/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.creativitykills.RiderAdmin.DriverNotif;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B5F698B72033209D0046F715 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -337,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -388,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -400,10 +535,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD925AFBEA0A6BB67908DD37 /* Pods-RiderDriver.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RiderDriver/RiderDriver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FMQ6R58UAV;
 				INFOPLIST_FILE = "$(SRCROOT)/RiderDriver/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.creativitykills.RiderAdmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,10 +554,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 68B02DE5F0B74C3B4783D1CD /* Pods-RiderDriver.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RiderDriver/RiderDriver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FMQ6R58UAV;
 				INFOPLIST_FILE = "$(SRCROOT)/RiderDriver/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.creativitykills.RiderAdmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,6 +572,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B5B1B58B203DA1E400082F47 /* Build configuration list for PBXNativeTarget "DriverNotif" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5B1B589203DA1E400082F47 /* Debug */,
+				B5B1B58A203DA1E400082F47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B5F698A22033209D0046F715 /* Build configuration list for PBXProject "RiderDriver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
