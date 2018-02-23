@@ -47,7 +47,7 @@ app.get('/status', (req, res) => res.json({ status }))
 app.get('/request', (req, res) => res.json(driver))
 
 app.post('/request', (req, res) => {
-    user_id = uuidv4()
+    user_id = req.body.user_id
     status = "Searching"
     rider = { name: "Jane Doe", number: "+18001234567", longitude: -122.088426, latitude: 37.388064 }
     pusher.trigger('cabs', 'status-update', { status, rider })
@@ -68,7 +68,7 @@ app.get('/pending-rider', (req, res) => res.json(rider))
 app.post('/status', (req, res) => {
     status = req.body.status
 
-    if (status == "EndedTrip") {
+    if (status == "EndedTrip" || status == "Neutral") {
         rider = driver = null
     } else {
         driver = { name: "John Doe" }

@@ -21,6 +21,7 @@
 		3F75EAC71CF7BAECDA3557CA /* Pods-RiderClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RiderClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-RiderClient/Pods-RiderClient.release.xcconfig"; sourceTree = "<group>"; };
 		8B0871DFDC65F4CB91FE420D /* Pods_RiderClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RiderClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5495BF8203BDD57001CF4A5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		B5495BFE203C7E23001CF4A5 /* RiderClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RiderClient.entitlements; sourceTree = "<group>"; };
 		B59D41782032B2030074FCDE /* RideStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideStatus.swift; sourceTree = "<group>"; };
 		B5BB9AD02032205C0032EEE2 /* RiderClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiderClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BB9AD32032205C0032EEE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		B5BB9AD22032205C0032EEE2 /* RiderClient */ = {
 			isa = PBXGroup;
 			children = (
+				B5495BFE203C7E23001CF4A5 /* RiderClient.entitlements */,
 				B5BB9AE8203221C40032EEE2 /* Storyboards */,
 				B5BB9AE62032219D0032EEE2 /* Resources */,
 				B5BB9AE5203221950032EEE2 /* Controllers */,
@@ -162,6 +164,11 @@
 					B5BB9ACF2032205C0032EEE2 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -241,11 +248,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RiderClient/Pods-RiderClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PushNotifications/PushNotifications.framework",
 				"${BUILT_PRODUCTS_DIR}/PusherSwift/PusherSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PushNotifications.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PusherSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -388,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -401,6 +410,7 @@
 			baseConfigurationReference = B7D1B95C392234C964738DCC /* Pods-RiderClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RiderClient/RiderClient.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FMQ6R58UAV;
 				INFOPLIST_FILE = "$(SRCROOT)/RiderClient/Resources/Info.plist";
@@ -418,6 +428,7 @@
 			baseConfigurationReference = 3F75EAC71CF7BAECDA3557CA /* Pods-RiderClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RiderClient/RiderClient.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FMQ6R58UAV;
 				INFOPLIST_FILE = "$(SRCROOT)/RiderClient/Resources/Info.plist";

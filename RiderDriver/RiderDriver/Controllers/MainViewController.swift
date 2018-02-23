@@ -32,13 +32,19 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
         cancelButton.isHidden = true
         noRequestsView.isHidden = false
 
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(findNewRequests), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(
+            timeInterval: 2,
+            target: self,
+            selector: #selector(findNewRequests),
+            userInfo: nil,
+            repeats: true
+        )
     }
     
     @objc private func findNewRequests() {
         guard status == .Neutral else { return }
         
-        Alamofire.request(AppConstants.URL + "/pending-rider")
+        Alamofire.request(AppConstants.API_URL + "/pending-rider")
             .validate()
             .responseJSON { response in
                 guard response.result.isSuccess,
@@ -65,7 +71,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     }
     
     private func sendStatusChange(_ status: RideStatus, handler: @escaping(Bool) -> Void) {
-        Alamofire.request(AppConstants.URL + "/status", method: .post, parameters: ["status": status.rawValue])
+        Alamofire.request(AppConstants.API_URL + "/status", method: .post, parameters: ["status": status.rawValue])
             .validate()
             .responseJSON { response in
                 guard response.result.isSuccess,
@@ -90,8 +96,8 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
             sendStatusChange(.Neutral) { successful in
                 if successful {
                     self.status = .Neutral
-                    self.requestView.isHidden = false
-                    self.noRequestsView.isHidden = true
+                    self.requestView.isHidden = true
+                    self.noRequestsView.isHidden = false
                 }
             }
         }
