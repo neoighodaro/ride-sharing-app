@@ -6,4 +6,5 @@ target 'RiderDriver' do
   pod 'PusherSwift', '~> 5.1.1'
   pod 'Alamofire', '~> 4.6.0'
   pod 'GoogleMaps', '~> 2.6.0'
+  pod 'PushNotifications'
 end

@@ -9,11 +9,17 @@
 import UIKit
 import Alamofire
 import GoogleMaps
+import PusherSwift
 
 class MainViewController: UIViewController, GMSMapViewDelegate {
 
     var status: RideStatus!
     var locationMarker: GMSMarker!
+    
+    var pusher = Pusher(
+        withAppKey: AppConstants.PUSHER_KEY,
+        options: PusherClientOptions(host: .cluster(AppConstants.PUSHER_CLUSTER))
+    )
 
     @IBOutlet weak var riderName: UILabel!
     
@@ -31,6 +37,15 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
         requestView.isHidden = true
         cancelButton.isHidden = true
         noRequestsView.isHidden = false
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(changeStatusFromPushNotification),
+            name: Notification.Name("status"),
+            object: nil
+        )
+        
+        findNewRequests()
 
         Timer.scheduledTimer(
             timeInterval: 2,
@@ -39,6 +54,43 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
             userInfo: nil,
             repeats: true
         )
+    }
+    
+    @objc private func changeStatusFromPushNotification(notification: Notification) {
+        guard
+            let data = notification.userInfo as? [String: RideStatus],
+            let status = data["status"] else { return }
+        
+        sendStatusChange(status) { successful in
+            guard successful else { return }
+            
+            if status == .Neutral {
+                self.status = .FoundRide
+                self.cancelButtonPressed(UIButton())
+            }
+            
+            if status == .FoundRide {
+                self.status = .Searching
+                self.statusButtonPressed(UIButton())
+            }
+        }
+    }
+    
+    private func listenForStatusUpdates() {
+        let channel = pusher.subscribe(channelName: "cabs")
+        
+        let _ = channel.bind(eventName: "status-update") { data in
+            if let data = data as? [String: AnyObject] {
+                if let status = data["status"] as? String, let rideStatus = RideStatus(rawValue: status) {
+                    if rideStatus == .Neutral {
+                        self.status = .Neutral
+                        self.cancelButtonPressed(UIButton())
+                    }
+                }
+            }
+        }
+        
+        pusher.connect()
     }
     
     @objc private func findNewRequests() {
@@ -62,7 +114,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
         locationMarker.map = mapView
         
         status = .Searching
-        cancelButton.isHidden = true
+        cancelButton.isHidden = false
         statusButton.setTitle("Accept Trip", for: .normal)
         
         riderName.text = rider.name
@@ -92,7 +144,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
-        if status == .FoundRide {
+        if status == .FoundRide || status == .Searching {
             sendStatusChange(.Neutral) { successful in
                 if successful {
                     self.status = .Neutral

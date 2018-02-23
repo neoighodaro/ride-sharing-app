@@ -108,7 +108,7 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
     }
     
     private func sendRequest(_ method: HTTPMethod, handler: @escaping(Bool) -> Void) {
-        Alamofire.request(AppConstants.API_URL + "/request", method: method)
+        Alamofire.request(AppConstants.API_URL + "/request", method: method, parameters: ["user_id": AppConstants.USER_ID])
             .validate()
             .responseJSON { response in
                 guard response.result.isSuccess,
