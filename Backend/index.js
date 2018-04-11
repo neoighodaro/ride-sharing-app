@@ -49,7 +49,13 @@ function sendRiderPushNotificationFor(status) {
         case "FoundRide":
             var alert = {
                 "title": "🚕 Found a ride",
-                "body": "The driver is a few minutes away."
+                "body": "The driver is on the way."
+            }
+            break;
+        case "Arrived":
+            var alert = {
+                "title": "🚕 Driver is waiting",
+                "body": "The driver outside, please meet him."
             }
             break;
         case "OnTrip":

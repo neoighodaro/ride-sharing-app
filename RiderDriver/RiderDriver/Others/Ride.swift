@@ -24,6 +24,7 @@ enum RideStatus: String {
     case Neutral = "Neutral"
     case Searching = "Searching"
     case FoundRide = "FoundRide"
+    case Arrived = "Arrived"
     case OnTrip = "OnTrip"
     case EndedTrip = "EndedTrip"
 }

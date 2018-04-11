@@ -137,7 +137,8 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
         switch self.status! {
         case .Neutral,
              .Searching: return .FoundRide
-        case .FoundRide: return .OnTrip
+        case .FoundRide: return .Arrived
+        case .Arrived: return .OnTrip
         case .OnTrip: return .EndedTrip
         case .EndedTrip: return .Neutral
         }
@@ -165,6 +166,9 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
             case .Neutral, .Searching:
                 self.cancelButton.isHidden = true
             case .FoundRide:
+                self.cancelButton.isHidden = false
+                self.statusButton.setTitle("Announce Arrival", for: .normal)
+            case .Arrived:
                 self.cancelButton.isHidden = false
                 self.statusButton.setTitle("Start Trip", for: .normal)
             case .OnTrip:

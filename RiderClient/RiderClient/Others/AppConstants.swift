@@ -10,9 +10,9 @@ import Foundation
 
 class AppConstants {
     static let GOOGLE_API_KEY = "GOOGLE_API_KEY"
-    static let PUSHER_KEY = "PUSHER_API_KEY"
-    static let PUSHER_CLUSTER = "PUSHER_API_CLUSTER"
-    static let API_URL = "http://127.0.0.1:4000"
-    static let PUSH_NOTIF_INSTANCE_ID = "PUSHER_NOTIFICATION_INSTANCE_ID"
-    static let USER_ID = UUID().uuidString
+    static let API_URL = "http://127.0.0.1"
+    static let PUSHER_KEY = "PUSHER_KEY"
+    static let PUSHER_CLUSTER = "PUSHER_CLUSTER"
+    static let PUSH_NOTIF_INSTANCE_ID = "PUSH_NOTIF_INSTANCE_ID"
+    static let USER_ID = UUID().uuidString    
 }

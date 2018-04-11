@@ -85,10 +85,16 @@ class MainViewController: UIViewController, GMSMapViewDelegate {
             orderButton.setTitleColor(UIColor.clear, for: .normal)
             loadingIndicator.startAnimating()
 
-        case .FoundRide:
+        case .FoundRide, .Arrived:
             driverDetailsView.isHidden = false
             loadingOverlay.isHidden = true
-            orderStatus.text = msg != nil ? msg! : "😎 Found a ride, your ride is on it's way"
+            
+            if status == .FoundRide {
+                orderStatus.text = msg != nil ? msg! : "😎 Found a ride, your ride is on it's way"
+            } else {
+                orderStatus.text = msg != nil ? msg! : "⏰ Your driver is waiting, please meet outside."
+            }
+            
             orderButton.isHidden = true
             cancelButton.isHidden = false
             loadingIndicator.stopAnimating()
